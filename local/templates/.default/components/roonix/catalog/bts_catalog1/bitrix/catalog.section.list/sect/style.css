@@ -1,0 +1,7 @@
+.manufacturer_page {display: inline-block;}
+.manufacturer_page ul li {float: left; margin-right: 5px; margin-left: 5px; width: 205px;}
+.cat ul li {padding-bottom: 5px;}
+.tumb-section {padding: 3px; width: 100%; height: 210px; border: 1px solid lightgrey; border-radius: 3px; text-align: center; position: relative;}
+.tumb-section a.catname {margin-bottom: 5px;}
+.tumb-section .catimage{bottom: 6px; display: block; text-align: center;}
+.tumb-section .catimage img{}

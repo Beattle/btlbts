@@ -1,0 +1,400 @@
+/**
+ * BxSlider v4.1.2 - Fully loaded, responsive content slider
+ * http://bxslider.com
+ *
+ * Written by: Steven Wanderski, 2014
+ * http://stevenwanderski.com
+ * (while drinking Belgian ales and listening to jazz)
+ *
+ * CEO and founder of bxCreative, LTD
+ * http://bxcreative.com
+ */
+
+
+/** RESET AND LAYOUT
+===================================*/
+
+.bx-wrapper {
+	position: relative;
+	padding: 0;
+	*zoom: 1;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.bx-wrapper  img {
+	width: 100%;
+	border: 1px solid #cccccc;
+	border-radius: 13px;
+}
+
+.carusel .bx-wrapper  img  {
+	width: auto;
+	border: none;
+	border-radius: 0;
+}
+
+.tools .bx-wrapper  img {
+	width: auto;
+	border: none;
+	border-radius: none;
+}
+
+.carusell .bx-wrapper img {
+   border-radius: 0;
+}
+
+.carusell .bx-viewport {
+	height: auto !important;
+}
+
+.carusell2 .bx-wrapper {
+	max-width: 650px !important;
+	margin-top: 18px !important;
+}
+
+/** THEME
+===================================*/
+
+.bx-wrapper .bx-viewport {
+	/*fix other elements on the page moving (on Chrome)*/
+	-webkit-transform: translatez(0);
+	-moz-transform: translatez(0);
+    	-ms-transform: translatez(0);
+    	-o-transform: translatez(0);
+    	transform: translatez(0);
+}
+
+.bx-wrapper .bx-pager,
+.bx-wrapper .bx-controls-auto {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+
+.photo_gallery .bx-wrapper .bx-pager {
+	bottom: -45px !important;
+}
+
+/* LOADER */
+
+.bx-wrapper .bx-loading {
+	min-height: 50px;
+	background: url(images/bx_loader.gif) center center no-repeat #fff;
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 2000;
+}
+
+/* PAGER */
+
+.bx-wrapper .bx-pager {
+	text-align: center;
+	font-size: .85em;
+	font-family: Arial;
+	font-weight: bold;
+	color: #666;
+	width: 100%;
+}
+
+.bx-wrapper .bx-pager .bx-pager-item,
+.bx-wrapper .bx-controls-auto .bx-controls-auto-item {
+	display: inline-block;
+	*zoom: 1;
+	*display: inline;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a {
+	background-color: #434a54;
+	font-size: 0;
+	text-indent: -9999px;
+	display: block;
+	width: 8px;
+	height: 8px;
+	outline: 0;
+	margin: 0 2px;
+	border: none;
+	border-radius: 50%;
+}
+
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active {
+	background-color: #ed5565;
+}
+
+/* DIRECTION CONTROLS (NEXT / PREV) */
+
+
+.bx-wrapper .bx-prev {
+	left: 30px;
+	background: url(images/arrow_left.png) no-repeat;
+}
+
+.bx-wrapper .bx-prev:hover {
+	background: url(images/arrow_left_hover.png) no-repeat;
+}
+
+.carusel .bx-wrapper .bx-prev {
+	left: -60px;
+	background: url(images/arrow_left2.jpg) no-repeat;
+}
+
+.carusel .bx-wrapper .bx-prev:hover {
+	background: url(images/arrow_left2_hover.jpg) no-repeat;
+}
+
+.tools .bx-wrapper .bx-prev {
+	top: -25px;
+	left: 45%;
+	background: url(images/arr_top.jpg) no-repeat;
+}
+
+.tools .bx-wrapper .bx-prev:hover {
+	background: url(images/arr_top_hover.jpg) no-repeat;
+}
+
+.carusell .bx-wrapper .bx-prev {
+	left: -50px;
+	background: url(images/side_prev.png) no-repeat;
+}
+
+.carusell .bx-wrapper .bx-prev:hover {
+	background: url(images/side_prev_hover.png) no-repeat;
+}
+
+.carusell2 .bx-wrapper .bx-prev {
+	left: 600px;
+	background: url(images/arrow_left2.jpg) no-repeat;
+}
+
+.carusell2 .bx-wrapper .bx-prev:hover {
+	background: url(images/arrow_left2_hover.jpg) no-repeat;
+}
+
+
+.carusell3 .bx-wrapper .bx-prev {
+	background: url(images/side_prev.png) no-repeat;
+	left: 5px;
+	top: -54px;
+}
+
+.carusell3 .bx-wrapper .bx-prev:hover {
+	background: url(images/side_prev_hover.png) no-repeat;
+}
+
+/*
+@-moz-document url-prefix() {  
+.bx-wrapper .bx-prev {
+	left: 174px;
+}
+}  
+
+*|html[xmlns*=""] .bx-wrapper .bx-prev {
+	left: 174px;
+}
+*/
+
+.bx-wrapper .bx-next {
+	right: 30px;
+	background: url(images/arrow_right.png) no-repeat;
+}
+
+.bx-wrapper .bx-next:hover {
+	background: url(images/arrow_right_hover.png) no-repeat;
+}
+
+.carusel .bx-wrapper .bx-next {
+	right: -60px;
+	background: url(images/arrow_right2.jpg) no-repeat;
+}
+
+.carusel .bx-wrapper .bx-next:hover {
+	background: url(images/arrow_right2_hover.jpg) no-repeat;
+}
+
+.tools .bx-wrapper .bx-next {
+	bottom: 10px !important;
+	left: 45%;
+	background: url(images/arr_bot.jpg) no-repeat;
+}
+
+.tools .bx-wrapper .bx-next:hover {
+	background: url(images/arr_bot_hover.jpg) no-repeat;
+}
+
+.carusell .bx-wrapper .bx-next {
+	right: -50px;
+	background: url(images/slide_next.png) no-repeat;
+}
+
+.carusell .bx-wrapper .bx-next:hover {
+	background: url(images/slide_next_hover.png) no-repeat;
+}
+
+.carusell2 .bx-wrapper .bx-next {
+	right: -5px;
+	background: url(images/arrow_right2.jpg) no-repeat;
+}
+
+.carusell2 .bx-wrapper .bx-next:hover {
+	background: url(images/arrow_right2_hover.jpg) no-repeat;
+}
+
+
+.carusell3 .bx-wrapper .bx-next {
+	right: -5px;
+	background: url(images/slide_next.png) no-repeat;
+	top: -54px;
+}
+
+.carusell3 .bx-wrapper .bx-next:hover {
+	background: url(images/slide_next_hover.png) no-repeat;
+}
+
+
+
+/*
+@-moz-document url-prefix() {  
+.bx-wrapper .bx-next{
+	right: 173px;
+}
+}  
+
+*|html[xmlns*=""] .bx-wrapper .bx-next{
+	right: 173px;
+}
+*/
+.bx-wrapper .bx-controls-direction a {
+	position: absolute;
+	top: 100%;
+	margin-top: 20px;
+	outline: 0;
+	width: 45px;
+	height: 75px;
+	text-indent: -9999px;
+	z-index: 5;
+}
+
+.slider .bx-controls-direction a {
+	top: 34%;
+}
+
+.carusel .bx-controls-direction a {
+	width: 25px;
+	height: 26px;
+	top: 14%;
+}
+
+.tools .bx-controls-direction a {
+	width: 25px;
+	height: 25px;
+	margin-top: 0px;
+}
+
+.carusell .bx-controls-direction a {
+	width: 25px;
+	height: 25px;
+	top: 35%;
+	margin-top: 0px;
+}
+
+.carusell2 .bx-controls-direction a {
+	width: 25px;
+    height: 26px;
+    top: 0%;
+    margin-top: -40px;
+}
+
+.bx-wrapper .bx-controls-direction a.disabled {
+	display: none;
+}
+
+
+/* AUTO CONTROLS (START / STOP) */
+
+.bx-wrapper .bx-controls-auto {
+	text-align: center;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start {
+	display: block;
+	text-indent: -9999px;
+	width: 10px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -11px no-repeat;
+	margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-start:hover,
+.bx-wrapper .bx-controls-auto .bx-start.active {
+	background-position: -86px 0;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop {
+	display: block;
+	text-indent: -9999px;
+	width: 9px;
+	height: 11px;
+	outline: 0;
+	background: url(images/controls.png) -86px -44px no-repeat;
+	margin: 0 3px;
+}
+
+.bx-wrapper .bx-controls-auto .bx-stop:hover,
+.bx-wrapper .bx-controls-auto .bx-stop.active {
+	background-position: -86px -33px;
+}
+
+/* PAGER WITH AUTO-CONTROLS HYBRID LAYOUT */
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-pager {
+	text-align: left;
+	width: 80%;
+}
+
+.bx-wrapper .bx-controls.bx-has-controls-auto.bx-has-pager .bx-controls-auto {
+	right: 0;
+	width: 35px;
+}
+
+/* IMAGE CAPTIONS */
+
+.bx-wrapper .bx-caption {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	background: #666\9;
+	background: rgba(80, 80, 80, 0.75);
+	width: 100%;
+}
+
+.bx-wrapper .bx-caption span {
+	color: #fff;
+	font-family: Arial;
+	display: block;
+	font-size: .85em;
+	padding: 10px;
+}
+
+@media screen and (max-width: 1000px) { 
+	.slider .bx-prev {
+	  left: 0px !important;
+	}
+	
+	.slider .bx-next {
+	  right: 0px !important;
+	}
+}
+
+@media screen and (max-width: 480px) { 
+	.bx-wrapper .bx-prev {
+		left: 0;
+	}
+	.bx-wrapper .bx-next {
+		right: 0;
+	}
+}

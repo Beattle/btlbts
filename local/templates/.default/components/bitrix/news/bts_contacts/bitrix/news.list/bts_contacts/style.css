@@ -1,0 +1,16 @@
+/*
+.wr_contacts .contacts_name{margin-left: 100px;}
+.wr_contacts .contacts_img{margin-top: 20px;}
+.wr_contacts .contacts_img a{float: left; color: #5a93d7; font-size: 18px;}
+.wr_contacts .contacts_img a div{height: 100%;}
+.wr_contacts .contacts_img a img{border: 1px solid #aaa; border-radius: 5px; }
+.wr_contacts .block_contactss{clear: both; vertical-align: middle; position: relative;}
+*/
+
+.wr_contacts ul{list-style-type: none;}
+.wr_contacts ul li{float: left; margin: 0px 5px 25px;}
+.wr_contacts ul li .contacts_img{height: 150px;}
+.wr_contacts a{color: #5a93d7; text-align: center; font-size: 16px;}
+.wr_contacts a img{border: 1px solid #aaa; border-radius: 5px;}
+.wr_contacts .contacts_name{bottom: 5px;}
+.img_contacts{display: table-cell; height: 120px; vertical-align: middle;}

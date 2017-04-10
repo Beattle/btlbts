@@ -1,0 +1,48 @@
+.block_pagination ul li {
+    display: inline-block;
+}
+.block_pagination ul li a {
+    display: block;
+    width: 23px;
+    height: 35px;
+    font-size: 13px;
+    line-height: 15px;
+    padding-top: 9px;
+    color: #2f2f2f;
+    text-align: center;
+}
+.block_pagination ul li.active a {
+    display: block;
+    width: 35px;
+    border: 1px solid #4c85c9;
+    border-radius: 3px;
+    color: #5e95d8;
+}
+.block_pagination ul li.pagination_prev a {
+    width: 6px;
+    height: 11px;
+    background: url(images/pagination_arrows.png) no-repeat 0 -11px;
+    text-indent: 10000px;
+    overflow: hidden;
+    margin-bottom: -2px;
+    margin-left: -1px;
+    margin-right: 4px;
+}
+.block_pagination ul li.pagination_next a {
+    width: 6px;
+    height: 11px;
+    background: url(images/pagination_arrows.png) no-repeat -6px -11px;
+    text-indent: 10000px;
+    overflow: hidden;
+    margin-bottom: -2px;
+    margin-right: -3px;
+    margin-left: 4px;
+}
+.block_pagination ul li.pagination_prev a:hover {
+    background-position: 0px 0px;
+}
+.block_pagination ul li.pagination_next a:hover {
+    background-position: -6px 0px;
+}
+
+.block_pagination {margin-top: 10px; margin-bottom: 10px; text-align: center;}

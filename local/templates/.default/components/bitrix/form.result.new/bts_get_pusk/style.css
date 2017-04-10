@@ -1,0 +1,51 @@
+table.form-table
+{
+	width:100%;
+	background-color:white;
+	border-collapse:collapse;
+	font-size:100%;
+	font-weight:normal;
+	line-height:160%;
+}
+
+table.form-table th, table.form-table td
+{
+	border:1px solid #ADC3D5;
+	padding: 5px 5px;
+	vertical-align:top;
+}
+
+table.form-table th
+{
+	text-align: left;
+	color:#25639A;
+}
+
+
+table.form-table td
+{
+	padding: 15px 5px;
+}
+
+.form-required
+{
+	color: red;
+}
+
+.error-fld {
+	display: block;
+	float: left;
+	height: 13px;
+	width: 15px;
+	background-repeat: no-repeat;
+	background-image: url(images/icon_warn.gif);
+}
+
+.popup{font: 18px/1.1 open_sansregular;}
+.popup h3 {font: 20px/1.3 open_sansregular; font-weight: bold;}
+.popup form{margin-left: 5px;}
+.popup div{padding-top: 10px; margin-top: 0px;}
+.popup .form_question input[type="text"], .popup .form_question textarea {width: 100%;}
+.popup .form_question input[type="submit"], .popup .form_question input[type="reset"] {width: 40%; color: white;}
+.popup .errortext {font-size: 14px;}
+.popup form p:last-child{font-size: 14px;}

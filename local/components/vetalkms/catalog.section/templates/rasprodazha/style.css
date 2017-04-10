@@ -1,0 +1,11 @@
+.main .article .catalog_sorting{border-top: none !important;}
+.main .article .main_news_item{border: none !important;}
+.main .article .catalog_items_rows{padding: 0px !important;}
+.main .article .catalog_sorting{padding: 0px !important; margin: 0px !important;}
+.main .article .main_news_item .main_news_content{padding: 0px !important;}
+.main .article .main_news_item{padding: 0px !important;}
+.main .article .catalog_items_rows .catalog_item .left_side .make_bigger::before{float: none !important;}
+.rasprodazha{width: 150px; height: 150px; background: transparent url("/upload/rosa_pictogram_sale_ru.png") no-repeat scroll 0px 0px; position: absolute; top: -10px; left: -6px;}
+.main .article .catalog_sorting{overflow: inherit !important;}
+.catalog_item a.heading{margin-left: 164px;}
+.left_side_img{text-align: center; width: 160px; display: inline-block;}

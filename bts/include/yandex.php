@@ -1,0 +1,1 @@
+<img src="<?=SITE_TEMPLATE_PATH?>/temp/images/yandex.png" width="190" height="117" alt="Яндекс отзывы">

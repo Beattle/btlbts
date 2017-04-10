@@ -1,0 +1,302 @@
+/* 
+ * Selecter v3.2.3 - 2014-10-24 
+ * A jQuery plugin for replacing default select elements. Part of the Formstone Library. 
+ * http://formstone.it/selecter/ 
+ * 
+ * Copyright 2014 Ben Plum; MIT Licensed 
+ */
+
+
+.selecter {
+  position: relative;
+  display: block;
+  z-index: 1;
+  
+}
+.selecter:focus {
+  box-shadow: none;
+  outline: none;
+}
+.selecter,
+.selecter * {
+  -webkit-user-select: none !important;
+     -moz-user-select: none !important;
+      -ms-user-select: none !important;
+          user-select: none !important;
+}
+.selecter,
+.selecter *,
+.selecter *:before,
+.selecter *:after {
+  -moz-box-sizing: border-box;
+       box-sizing: border-box;
+}
+.selecter-element {
+	width: 100%;
+	height: 30px;
+	position: absolute;
+	left: 0;
+	opacity: 0;
+	z-index: -1;
+}
+.selecter-element,
+.selecter-element:focus {
+  outline: none;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: transparent;
+}
+.no-opacity .selecter-element {
+  left: -999999px;
+}
+.selecter-selected {
+	background-color: #fff;
+	color: #474747;
+	font: 11px/1.1 open_sansregular !important;
+	width: 60px;
+	position: relative;
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 4px 10px 4px 10px;
+	text-overflow: clip;
+	z-index: 2;
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	border: solid 1px #ccc;
+	margin-top: 8px;
+}
+
+.tabs_select .selecter-selected  {
+	width: 130px;
+	color: #474747;
+	font: 12px/1.1 open_sansregular !important;
+	border-radius: 0;
+	-webkit-box-shadow: inset 0 2px 1px rgba(14,29,30,.1);
+	-moz-box-shadow: inset 0 2px 1px rgba(14,29,30,.1);
+	box-shadow: inset 0 2px 1px rgba(14,29,30,.1);
+	border: solid 1px #ccc;
+	margin-top: 0;
+}
+
+.select .selecter-selected  {
+	width: 130px;
+}
+
+.select2 .selecter-selected  {
+	width: 60px;
+}
+.selecter-selected:after {
+	background: url("../../../../bst/images/select.jpg") no-repeat;
+	width: 18px;
+	height: 12px;
+	position: absolute;
+	top: 0px;
+	right: -5px;
+	bottom: 0;
+	content: '';
+	display: block;
+	margin: auto 0;
+}
+
+.tabs_select .selecter-selected:after {
+	background: url("../../../../bst/images/select2_bg.png") no-repeat;
+	width: 10px;
+	height: 5px;
+	position: absolute;
+	top: 2px;
+	right: 8px;
+	bottom: 0;
+	content: '';
+	display: block;
+	margin: auto 0;
+}
+
+.selecter-selected:after, x:-moz-any-link, x:only-child { top: -5px; }
+.no-touch .selecter-selected:hover {
+  color: #636363;
+}
+.no-touch .selecter.disabled .selecter-selected:hover {
+  color: #;
+}
+.selecter-options {
+	max-height: 260px;
+	position: absolute;
+	color: #474747;
+	font: 11px/1.1 open_sansregular !important;
+	top: 100%;
+	border-width: 0 1px 1px;
+	background-color: #fff;
+	display: none;
+	margin: 0;
+	overflow: auto;
+	overflow-x: hidden;
+	padding: 0;
+	z-index: 50;
+	margin: 0 auto;
+	border-left: 1px solid #ccc;
+	border-right: 1px solid #ccc;
+  }
+  
+.tabs_select  .selecter-options  {
+	color: #474747;
+	font: 12px/1.1 open_sansregular !important;
+}
+  
+.select .selecter-options  {
+	width: 130px;
+}
+.select2 .selecter-options  {
+	width: 60px;
+}
+.selecter-options.scroller {
+  position: absolute;
+}
+.no-opacity .selecter-options {
+  width: auto;
+}
+.selecter-group {
+  border-bottom: 1px solid #C3185C;
+  color: #999999;
+  display: block;
+  font-size: 11px;
+  padding: 10px 15px;
+  text-transform: uppercase;
+}
+.selecter-item {
+	width: 100%;
+	border-bottom: 1px solid #a3a3a3 !important;
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	overflow: hidden;
+	padding: 5px 15px;
+	text-decoration: none;
+	text-overflow: ellipsis;
+}
+.selecter-item.placeholder {
+  display: none;
+}
+.selecter-item.selected {
+  background: #;
+}
+.selecter-item.disabled {
+  color: #999999;
+  cursor: default;
+}
+.selecter-item:first-child {
+  border-radius: 0;
+}
+.selecter-item:last-child {
+  border-bottom: 0;
+
+}
+.no-touch .selecter-item:hover,
+.no-touch .selecter-item.selected:hover {
+  color: #fff;
+  background-color: #636363;
+}
+.selecter-item.disabled,
+.no-touch .selecter-item.disabled:hover {
+  color: #cccccc;
+  background-color: #ffffff;
+}
+.selecter.open {
+  z-index: 3;
+}
+.selecter.open .selecter-selected {
+  z-index: 51;
+  border-radius: 3px 3px 0 0;
+}
+.selecter.open .selecter-selected,
+.selecter.focus .selecter-selected {
+  background-color: #;
+
+}
+.selecter.cover .selecter-options {
+  border-width: 1px;
+  top: 0;
+  border-radius: 3px;
+}
+.selecter.cover .selecter-options .selecter-item.first {
+  border-radius: 3px 3px 0 0;
+}
+.selecter.cover.open .selecter-selected {
+  z-index: 49;
+  border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .selecter-options {
+  top: auto;
+  bottom: 100%;
+  border-width: 1px 1px 0;
+}
+.selecter.bottom .selecter-item:last-child {
+  border: none;
+}
+.selecter.bottom.open .selecter-selected {
+  border-radius: 0 0 3px 3px;
+}
+.selecter.bottom.open .selecter-options {
+  border-radius: 3px 3px 0 0;
+}
+.selecter.bottom .cover .selecter-options {
+  top: auto;
+  bottom: 0;
+}
+.selecter.bottom .cover.open .selecter-selected {
+  border-radius: 3px;
+}
+.selecter.bottom .cover.open .selecter-options {
+  border-radius: 3px;
+}
+.selecter.multiple .selecter-options {
+  width: 100%;
+  position: static;
+  border-width: 1px;
+  display: block;
+  border-radius: 3px;
+  box-shadow: none;
+}
+.selecter.disabled .selecter-selected {
+  background: #ffffff;
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+.selecter.disabled .selecter-options {
+  background: #ffffff;
+  border-color: #cccccc;
+}
+.selecter.disabled .selecter-group,
+.selecter.disabled .selecter-item {
+  border-color: #cccccc;
+  color: #cccccc;
+  cursor: default;
+}
+.selecter.disabled .selecter-item.selected,
+.no-touch .selecter.disabled .selecter-item.selected:hover {
+  background: #fafafa;
+}
+.selecter.disabled .selecter-item,
+.no-touch .selecter.disabled .selecter-item:hover {
+  color: #cccccc;
+  background-color: #ffffff;
+}
+.selecter-options.scroller {
+  overflow: hidden;
+}
+.selecter-options.scroller .scroller-content {
+  max-height: 260px;
+  padding: 0;
+}
+@media screen and (max-width: 740px) {
+  .selecter {
+    max-width: 100%;
+  }
+}
+@media screen and (max-width: 500px) {
+  .selecter {
+    max-width: 100%;
+  }
+}

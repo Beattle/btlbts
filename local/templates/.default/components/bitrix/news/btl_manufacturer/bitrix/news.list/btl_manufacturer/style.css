@@ -1,0 +1,10 @@
+.wr_contacts ul{list-style-type: none;}
+.wr_contacts ul li{float: left; margin: 0px 5px 40px; width: 152px;}
+.wr_contacts ul li .contacts_img{height: 200px;}
+.wr_contacts a{color: #5a93d7; text-align: center; font-size: 16px;}
+.wr_contacts a img{border-radius: 5px;}
+.wr_contacts .contacts_name{bottom: 5px;}
+.img_contacts{display: table-cell; height: 155px; vertical-align: middle;}
+.wr_contacts {clear: both; display: block;}
+.block_pagination{clear: both;}
+.pre_img_contacts{width: 100%; display: table;}

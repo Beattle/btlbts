@@ -1,0 +1,10 @@
+.peoples, .sheme, .textprev, .ourphone, .address, .print_sheme{clear: both; margin: 10px 0px;}
+.peoples, .sheme, .textprev, .ourphone, .address, .print_sheme strong{color: #474747;}
+.peoples ul, .sheme ul{list-style: none;}
+.peoples ul li, .sheme ul li{float: left; margin: 10px;}
+.peoples ul li {width: 200px;}
+.peoples ul li img, .sheme ul li img{margin-top: 5px;}
+
+.print_sheme a {color: #5a93d7;}
+
+.peoples .username{font-weight: bold; color: #5a93d7; margin: 5px 0px;}

@@ -1,0 +1,15 @@
+.sl_ttle p a{
+	width: 85px;
+	display: inline-block;
+	vertical-align: middle;
+	color: #474747;
+	font: 12px/1.5 open_sansregular;
+	text-decoration: none;
+}
+
+.sl_img img{border: 1px solid rgb(204, 204, 204) !important;}
+
+.sl_ttle {
+	margin-left: 0px !important;
+	width: 90px;
+}

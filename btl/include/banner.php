@@ -1,0 +1,1 @@
+<a href="/festool/"><img border="0" src="<?=SITE_TEMPLATE_PATH?>/temp/images/festool.png" width="164" height="23" alt="Festool"></a>

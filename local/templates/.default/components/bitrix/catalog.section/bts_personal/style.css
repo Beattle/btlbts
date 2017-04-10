@@ -1,0 +1,11 @@
+.personal ul li{float: left; padding: 10px; width: 225px;}
+.personal .bx-wrapper img{border: none !important;}
+.personal .bl_img{vertical-align: middle; display: table-cell; width: 172px;}
+
+.personal .perstumb{background-color: #f4f4f4; padding: 10px; margin: 20px 0px; height: 290px; position: relative;}
+.personal ul{background-color: white !important;}
+
+
+.personal .silk_bg {position: absolute; left: 40px; bottom: 15px;}
+
+.personal .bx-wrapper img {border: none; border-radius: 0px;}

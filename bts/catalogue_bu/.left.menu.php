@@ -1,0 +1,39 @@
+<?
+$aMenuLinks = Array(
+	Array(
+		"Каталог нового оборудования",
+		"/about/manuf/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Реквизиты",
+		"/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Новости",
+		"/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Контакты",
+		"/",
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Выставки",
+		"/",
+		Array(), 
+		Array(), 
+		"" 
+	)
+);
+?>

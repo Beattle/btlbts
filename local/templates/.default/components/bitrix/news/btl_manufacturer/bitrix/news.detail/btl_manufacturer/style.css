@@ -1,0 +1,9 @@
+.main_news_item .date{margin-top: -15px; margin-bottom: 20px;}
+.main_news_item .news_pic {float: left; margin: 0 25px 15px 0; border: 1px solid #aaa; border-radius: 5px; padding: 5px 5px 2px 5px;}
+.main_news_item p {color: #474747; font: 12px/1.3 open_sansregular; margin-bottom: 15px; text-indent: 20px; text-align: justify;}
+.main_news_item p a {color: #5c95d7; font: 12px/1.1 open_sansregular; }
+.main_news_item .carusell.mbxslider5 .bx-wrapper {margin-top: 10px !important; max-width: 800px !important;}
+.main_news_item .carusell2.mbxslider7 .bx-wrapper {margin-top: 10px !important; max-width: 913px !important;}
+.main_news_item .carusell .bx-wrapper .bl_img img{border-radius: 5px !important;}
+
+.main_news_content {text-align: justify; text-indent: 20px;}
