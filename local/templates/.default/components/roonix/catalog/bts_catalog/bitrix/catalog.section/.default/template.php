@@ -23,16 +23,6 @@ $this->setFrameMode(true);
 			<option value="shows" <?=($_REQUEST["sort"]=="shows"?"selected":"")?>>Популярности</option>
 		</select>
 	</div>
-	<div class="show_by">
-		<div class="show_title">Показывать по:</div>
-		<select class="show_select" name="page" onchange="$('#srtform').submit();">
-			<option value="9" <?=($_REQUEST["page"]==9?"selected":"")?>>9</option>
-			<option value="18" <?=($_REQUEST["page"]==18?"selected":"")?>>18</option>
-			<option value="33" <?=($_REQUEST["page"]==33?"selected":"")?>>33</option>
-			<option value="45" <?=($_REQUEST["page"]==45?"selected":"")?>>45</option>
-		</select>
-		товаров
-	</div>
 	<? if  ($arParams["SORTS"]["proizv"]) { ?>
 	<div class="proizv_by">
 		<div class="show_title">Показывать по:</div>

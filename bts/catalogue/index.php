@@ -81,8 +81,8 @@ $arrFilter = Array(
     </div>
 
 <?$APPLICATION->IncludeComponent(
-	"roonix:catalog",
-	"bts_catalog",
+	"roonix:catalog", 
+	"bts_catalog", 
 	array(
 		"IBLOCK_TYPE" => "catalogue",
 		"IBLOCK_ID" => "17",
@@ -110,6 +110,8 @@ $arrFilter = Array(
 			1 => "",
 		),
 		"FILTER_PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
 			0 => "Цена продажи",
@@ -140,6 +142,7 @@ $arrFilter = Array(
 		),
 		"COMPARE_PROPERTY_CODE" => array(
 			0 => "",
+			1 => "",
 		),
 		"COMPARE_OFFERS_FIELD_CODE" => array(
 			0 => "",
@@ -172,14 +175,22 @@ $arrFilter = Array(
 		"SECTION_TOP_DEPTH" => "1",
 		"SECTIONS_VIEW_MODE" => "LIST",
 		"SECTIONS_SHOW_PARENT_NAME" => "Y",
-		"PAGE_ELEMENT_COUNT" => $page,
+		"PAGE_ELEMENT_COUNT" => "10",
 		"LINE_ELEMENT_COUNT" => "1",
 		"ELEMENT_SORT_FIELD" => $sort,
 		"ELEMENT_SORT_ORDER" => $order,
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"LIST_PROPERTY_CODE" => $APPLICATION->IncludeFile("/include/list_property_code.php", Array(), Array("MODE" => "php")),
-		"DETAIL_PROPERTY_CODE" => $APPLICATION->IncludeFile("/include/detail_property_code.php", Array(), Array("MODE" => "php")),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "",
+			1 => $APPLICATION->IncludeFile("/include/list_property_code.php",Array(),Array("MODE"=>"php")),
+			2 => "",
+		),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "",
+			1 => $APPLICATION->IncludeFile("/include/detail_property_code.php",Array(),Array("MODE"=>"php")),
+			2 => "",
+		),
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_META_DESCRIPTION" => "-",
@@ -218,21 +229,20 @@ $arrFilter = Array(
 		"OFFERS_SORT_ORDER" => "asc",
 		"OFFERS_SORT_FIELD2" => "id",
 		"OFFERS_SORT_ORDER2" => "desc",
-		"PAGER_TEMPLATE" => ".default",
+		"PAGER_TEMPLATE" => "round",
 		"DISPLAY_TOP_PAGER" => "N",
 		"DISPLAY_BOTTOM_PAGER" => "Y",
 		"PAGER_TITLE" => "",
 		"PAGER_SHOW_ALWAYS" => "N",
 		"PAGER_DESC_NUMBERING" => "N",
 		"PAGER_DESC_NUMBERING_CACHE_TIME" => "36000",
-		"PAGER_SHOW_ALL" => "N",
+		"PAGER_SHOW_ALL" => "Y",
 		"TEMPLATE_THEME" => "blue",
 		"ADD_PICT_PROP" => "-",
 		"LABEL_PROP" => "-",
 		"PRODUCT_DISPLAY_MODE" => "N",
 		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-		),
+		"OFFER_TREE_PROPS" => "",
 		"SHOW_DISCOUNT_PERCENT" => "N",
 		"SHOW_OLD_PRICE" => "Y",
 		"DETAIL_SHOW_MAX_QUANTITY" => "Y",
@@ -248,10 +258,12 @@ $arrFilter = Array(
 		"AJAX_OPTION_ADDITIONAL" => "",
 		"PRODUCT_PROPS_VARIABLE" => "prop",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
-		"PRODUCT_PROPERTIES" => array(),
+		"PRODUCT_PROPERTIES" => array(
+		),
 		"OFFERS_CART_PROPERTIES" => array(
 			0 => "CML2_ARTICLE",
 		),
+		"COMPONENT_TEMPLATE" => "bts_catalog",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

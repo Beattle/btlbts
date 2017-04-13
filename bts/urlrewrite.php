@@ -19,10 +19,10 @@ $arUrlRewrite = array(
 		"PATH" => "/about/technology/index.php",
 	),
 	array(
-		"CONDITION" => "#^/about/articles/#",
+		"CONDITION" => "#^/clearance-sale/#",
 		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/about/articles/index.php",
+		"ID" => "roonix:catalog",
+		"PATH" => "/clearance-sale/index.php",
 	),
 	array(
 		"CONDITION" => "#^/about/contacts/#",
@@ -31,10 +31,10 @@ $arUrlRewrite = array(
 		"PATH" => "/about/contacts/index.php",
 	),
 	array(
-		"CONDITION" => "#^/clearance-sale/#",
+		"CONDITION" => "#^/about/articles/#",
 		"RULE" => "",
-		"ID" => "roonix:catalog",
-		"PATH" => "/clearance-sale/index.php",
+		"ID" => "bitrix:news",
+		"PATH" => "/about/articles/index.php",
 	),
 	array(
 		"CONDITION" => "#^/catalogue_bu/#",
@@ -53,12 +53,6 @@ $arUrlRewrite = array(
 		"RULE" => "",
 		"ID" => "roonix:catalog",
 		"PATH" => "/catalogue/index.php",
-	),
-	array(
-		"CONDITION" => "#^/catalogue/#",
-		"RULE" => "",
-		"ID" => "roonix:catalog",
-		"PATH" => "/test/index.php",
 	),
 	array(
 		"CONDITION" => "#^/actions/#",
