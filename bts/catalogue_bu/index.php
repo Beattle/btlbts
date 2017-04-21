@@ -81,8 +81,8 @@ $arrFilter = Array(
     </div>
 
 <?$APPLICATION->IncludeComponent(
-	"roonix:catalog",
-	"bts_catalog",
+	"roonix:catalog", 
+	"bts_catalog", 
 	array(
 		"IBLOCK_TYPE" => "catalogue",
 		"IBLOCK_ID" => "17",
@@ -111,6 +111,7 @@ $arrFilter = Array(
 		),
 		"FILTER_PROPERTY_CODE" => array(
 			0 => "",
+			1 => "",
 		),
 		"FILTER_PRICE_CODE" => array(
 			0 => "Цена продажи",
@@ -141,6 +142,7 @@ $arrFilter = Array(
 		),
 		"COMPARE_PROPERTY_CODE" => array(
 			0 => "",
+			1 => "",
 		),
 		"COMPARE_OFFERS_FIELD_CODE" => array(
 			0 => "",
@@ -179,8 +181,16 @@ $arrFilter = Array(
 		"ELEMENT_SORT_ORDER" => $order,
 		"ELEMENT_SORT_FIELD2" => "id",
 		"ELEMENT_SORT_ORDER2" => "desc",
-		"LIST_PROPERTY_CODE" => $APPLICATION->IncludeFile("/include/list_property_code.php", Array(), Array("MODE" => "php")),
-		"DETAIL_PROPERTY_CODE" => $APPLICATION->IncludeFile("/include/detail_property_code.php", Array(), Array("MODE" => "php")),
+		"LIST_PROPERTY_CODE" => array(
+			0 => "",
+			1 => $APPLICATION->IncludeFile("/include/list_property_code.php",Array(),Array("MODE"=>"php")),
+			2 => "",
+		),
+		"DETAIL_PROPERTY_CODE" => array(
+			0 => "",
+			1 => $APPLICATION->IncludeFile("/include/detail_property_code.php",Array(),Array("MODE"=>"php")),
+			2 => "",
+		),
 		"INCLUDE_SUBSECTIONS" => "Y",
 		"LIST_META_KEYWORDS" => "-",
 		"LIST_META_DESCRIPTION" => "-",
@@ -205,7 +215,6 @@ $arrFilter = Array(
 			0 => "CML2_ARTICLE",
 			1 => "",
 		),
-		//"USE_MAIN_ELEMENT_SECTION" => "Y",
 		"DETAIL_DISPLAY_NAME" => "Y",
 		"DETAIL_DETAIL_PICTURE_MODE" => "IMG",
 		"DETAIL_ADD_DETAIL_TO_SLIDER" => "N",
@@ -233,8 +242,7 @@ $arrFilter = Array(
 		"LABEL_PROP" => "-",
 		"PRODUCT_DISPLAY_MODE" => "N",
 		"OFFER_ADD_PICT_PROP" => "-",
-		"OFFER_TREE_PROPS" => array(
-		),
+		"OFFER_TREE_PROPS" => "",
 		"SHOW_DISCOUNT_PERCENT" => "N",
 		"SHOW_OLD_PRICE" => "Y",
 		"DETAIL_SHOW_MAX_QUANTITY" => "Y",
@@ -255,6 +263,7 @@ $arrFilter = Array(
 		"OFFERS_CART_PROPERTIES" => array(
 			0 => "CML2_ARTICLE",
 		),
+		"COMPONENT_TEMPLATE" => "bts_catalog",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

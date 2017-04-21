@@ -81,9 +81,9 @@ foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
 							<a class="item_image" href="<? echo $arItem['DETAIL_PAGE_URL']; ?>">
 								<img src="<?=$img["src"]?>" alt="<?=$arItem["NAME"]?>">
 							</a>
-							<? if ($arItem['DISPLAY_PROPERTIES']["HAR_FRS_PRICE"]["VALUE"]) { ?>
+							<? if ($arItem['MIN_PRICE']["VALUE"]) { ?>
 								<div class="frs_price">
-									<?=$arItem['DISPLAY_PROPERTIES']["HAR_FRS_PRICE"]["VALUE"]?>
+									<?=$arItem['MIN_PRICE']["PRINT_VALUE"]?>
 								</div>
 							<? } ?>
 						</div>

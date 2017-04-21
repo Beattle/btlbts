@@ -55,12 +55,6 @@ $arUrlRewrite = array(
 		"PATH" => "/catalogue/index.php",
 	),
 	array(
-		"CONDITION" => "#^/catalogue/#",
-		"RULE" => "",
-		"ID" => "roonix:catalog",
-		"PATH" => "/test/index.php",
-	),
-	array(
 		"CONDITION" => "#^/actions/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
