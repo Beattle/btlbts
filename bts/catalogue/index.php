@@ -86,7 +86,7 @@ $arrFilter = Array(
 	array(
 		"IBLOCK_TYPE" => "catalogue",
 		"IBLOCK_ID" => "17",
-		"HIDE_NOT_AVAILABLE" => "N",
+		"HIDE_NOT_AVAILABLE" => "Y",
 		"SECTION_ID_VARIABLE" => "SECTION_ID",
 		"SEF_MODE" => "Y",
 		"SEF_FOLDER" => "/catalogue/",
@@ -124,7 +124,7 @@ $arrFilter = Array(
 			0 => "CML2_ARTICLE",
 			1 => "",
 		),
-		"FILTER_VIEW_MODE" => "VERTICAL",
+		"FILTER_VIEW_MODE" => "HORIZONTAL",
 		"USE_REVIEW" => "Y",
 		"MESSAGES_PER_PAGE" => "10",
 		"USE_CAPTCHA" => "N",

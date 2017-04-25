@@ -58,10 +58,10 @@ if ($arParams['USE_FILTER'] == 'Y') {
 	}
 
 	?>
-	<? /*
+	<?
 	$APPLICATION->IncludeComponent(
-		"roonix:catalog.smart.filter",
-		"bts_smart",
+		"bitrix:catalog.smart.filter",
+		".default",
 		Array(
 			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -73,6 +73,8 @@ if ($arParams['USE_FILTER'] == 'Y') {
 			"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
 			"SAVE_IN_SESSION" => "N",
 			"XML_EXPORT" => "Y",
+			'CONVERT_CURRENCY' =>'Y',
+            "CURRENCY_ID" => "RUB",
 			"SECTION_TITLE" => "NAME",
 			"SECTION_DESCRIPTION" => "DESCRIPTION",
 			'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
@@ -80,7 +82,8 @@ if ($arParams['USE_FILTER'] == 'Y') {
 		),
 		$component,
 		array('HIDE_ICONS' => 'Y')
-	); */
+	);
+	echo '<pre>'.print_r($arParams["HIDE_NOT_AVAILABLE"],true).'</pre>';
 	?><?
 }
 
@@ -246,7 +249,7 @@ if (!$issections) {
 }
 
 if($USER->isAdmin()){
- //   echo '<pre>'.print_r($arCurSection,true).'</pre>';
+
 }?>
 <?if($arCurSection['NAME']):?>
     <div class="sectiontext">
