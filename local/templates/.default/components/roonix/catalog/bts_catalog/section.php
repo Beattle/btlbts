@@ -57,10 +57,9 @@ if ($arParams['USE_FILTER'] == 'Y') {
 		$arCurSection = array();
 	}
 
-	?>
-	<?
+
 	$APPLICATION->IncludeComponent(
-		"bitrix:catalog.smart.filter",
+		"ninjacat:catalog.smart.filter",
 		".default",
 		Array(
 			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
@@ -83,12 +82,13 @@ if ($arParams['USE_FILTER'] == 'Y') {
 		$component,
 		array('HIDE_ICONS' => 'Y')
 	);
-	echo '<pre>'.print_r($arParams["HIDE_NOT_AVAILABLE"],true).'</pre>';
-	?><?
+
+
 }
 
-?>
-<?
+
+
+
 if ($arParams["USE_COMPARE"] == "Y") {}
 
 	global $pathArray;
@@ -155,9 +155,10 @@ if (!$issections) {
 	} else {
 		$tmp = "";
 	}
-	?>
 
-	<? $intSectionID = $APPLICATION->IncludeComponent(
+
+
+     $intSectionID = $APPLICATION->IncludeComponent(
 		"bitrix:catalog.section",
 		$tmp,
 		array(

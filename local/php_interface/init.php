@@ -22,7 +22,9 @@ CModule::AddAutoloadClasses(null,
         'Bitrix\\VetalKms\\Agent' => '/local/bitrix/vetalkms/agent.php',
         //Валидация
         'Bitrix\\VetalKms\\validators\\CFormCustomValidatorStringRegExp' => '/local/bitrix/vetalkms/validators/string_regexp.php',
-        'Bitrix\\VetalKms\\forms\\CFormHelper' => '/local/bitrix/vetalkms/forms/formhelper.php'
+        'Bitrix\\VetalKms\\forms\\CFormHelper' => '/local/bitrix/vetalkms/forms/formhelper.php',
+        //Ninjacat
+        '\ninjacat\FacetMod' => '/local/php_interface/include/classes/facetmod.php'
         )
 );
 
@@ -686,5 +688,6 @@ function create_watermark( $main_img_obj, $text, $font, $r = 128, $g = 128, $b =
 }
 
  require($_SERVER["DOCUMENT_ROOT"] . '/local/php_interface/include/adminProps.php');
+
 
 ?>

@@ -35,11 +35,9 @@ if (!empty($_REQUEST["godvip"])) {
 	$godvip = "";
 }
 
-
+global $arrFilter;
 $arrFilter = Array(
 	'=PROPERTY_second_hand_VALUE' => 'Y',
-	'=PROPERTY_HAR_FRS_PROIZVODITEL.CODE' => $proizv,
-	'=PROPERTY_HAR_FRS_GOD_VYPUSKA' => $godvip
 );?>
 
 
