@@ -68,8 +68,9 @@ $pathArray = explode('/', $path);
 if ($pathArray[1] == 'catalogue' || $pathArray[1] == 'catalogue_bu' ) {
 	$SECTIONCODE = $pathArray[2];
 }
-
+$tools = new \ninjacat\Tools();
 ?>
+
 
 <header>
 	<div class="wr_top">
@@ -112,7 +113,7 @@ if ($pathArray[1] == 'catalogue' || $pathArray[1] == 'catalogue_bu' ) {
 		)
 	); ?>
 </div>
-<div class="content">
+<div class="content <?=$tools::curDir();?>">
 
 		<?
 		if (!ISINDEX) { ?>

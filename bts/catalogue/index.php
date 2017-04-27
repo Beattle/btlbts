@@ -5,35 +5,11 @@ $APPLICATION->SetPageProperty("keywords", "Деревообрабатывающ�
 $APPLICATION->SetPageProperty("description", "Деревообрабатывающее оборудование  Металлообрабатывающее оборудование  Стеклообрабатывающее оборудование. Огромный выбор. У нас Вы всегда найдете любые станки для деревообработки от ведущих производителей.");
 $APPLICATION->SetTitle("Каталог товаров");
 
-if (!empty($_REQUEST["page"])) {
-	$page = $_REQUEST["page"];
-} else {
-	$page = 9;
-}
 
-if (!empty($_REQUEST["sort"])) {
-	$sort = $_REQUEST["sort"];
-} else {
-	$sort = "sort";
-}
 
-if ($sort == "shows" || $sort == "sort") {
-	$order = "desc";
-} else {
-	$order = "asc";
-}
 
-if (!empty($_REQUEST["proizv"])) {
-	$proizv = $_REQUEST["proizv"];
-} else {
-	$proizv = "";
-}
 
-if (!empty($_REQUEST["godvip"])) {
-	$godvip = $_REQUEST["godvip"];
-} else {
-	$godvip = "";
-}
+
 
 global $arrFilter;
 

@@ -225,6 +225,11 @@ body{
 	width:  1170px;
 	margin: 0 auto;
 }
+
+.content.catalogue, .content.catalogue_bu{
+	position: relative;
+}
+
 .search{
 	background:    url("/images/search_bg.jpg") repeat-x;
 	height:        69px;
@@ -1077,6 +1082,11 @@ footer{
 	width:  650px;
 	margin: 0 20px 0 20px;
 }
+
+/*.cont_center.catalogue_bu,.cont_center.catalogue{
+	width: 910px;
+}*/
+
 .right_sidebar2{
 	width: 245px;
 }

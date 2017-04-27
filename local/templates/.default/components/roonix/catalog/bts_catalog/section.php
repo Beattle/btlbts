@@ -23,6 +23,8 @@ if ($arParams['USE_FILTER'] == 'Y') {
 		"IBLOCK_ID" => $arParams["IBLOCK_ID"],
 		"ACTIVE" => "Y",
 		"GLOBAL_ACTIVE" => "Y",
+        'ELEMENT_SUBSECTIONS' => 'N',
+        'CNT_ACTIVE' => 'Y'
 	);
 	if (0 < intval($arResult["VARIABLES"]["SECTION_ID"])) {
 		$arFilter["ID"] = $arResult["VARIABLES"]["SECTION_ID"];
@@ -36,7 +38,7 @@ if ($arParams['USE_FILTER'] == 'Y') {
 	} elseif ($obCache->StartDataCache()) {
 		$arCurSection = array();
 		if (\Bitrix\Main\Loader::includeModule("iblock")) {
-			$dbRes = CIBlockSection::GetList(array(), $arFilter, false, array("ID", "DESCRIPTION","NAME"));
+			$dbRes = CIBlockSection::GetList(array(), $arFilter, true, array("ID", "DESCRIPTION","NAME"));
 
 			if (defined("BX_COMP_MANAGED_CACHE")) {
 				global $CACHE_MANAGER;
@@ -57,32 +59,36 @@ if ($arParams['USE_FILTER'] == 'Y') {
 		$arCurSection = array();
 	}
 
+	?>
 
-	$APPLICATION->IncludeComponent(
-		"ninjacat:catalog.smart.filter",
-		".default",
-		Array(
-			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
-			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-			"SECTION_ID" => $arCurSection['ID'],
-			"FILTER_NAME" => $arParams["FILTER_NAME"],
-			"PRICE_CODE" => $arParams["PRICE_CODE"],
-			"CACHE_TYPE" => $arParams["CACHE_TYPE"],
-			"CACHE_TIME" => $arParams["CACHE_TIME"],
-			"CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
-			"SAVE_IN_SESSION" => "N",
-			"XML_EXPORT" => "Y",
-			'CONVERT_CURRENCY' =>'Y',
-            "CURRENCY_ID" => "RUB",
-			"SECTION_TITLE" => "NAME",
-			"SECTION_DESCRIPTION" => "DESCRIPTION",
-			'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
-			"TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"]
-		),
-		$component,
-		array('HIDE_ICONS' => 'Y')
-	);
 
+<? if ($arCurSection['ELEMENT_CNT'] > 0){?>
+
+        <?$APPLICATION->IncludeComponent(
+            "ninjacat:catalog.smart.filter",
+            ".default",
+            Array(
+                "IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
+                "IBLOCK_ID" => $arParams["IBLOCK_ID"],
+                "SECTION_ID" => $arCurSection['ID'],
+                "FILTER_NAME" => $arParams["FILTER_NAME"],
+                "PRICE_CODE" => $arParams["PRICE_CODE"],
+                "CACHE_TYPE" => $arParams["CACHE_TYPE"],
+                "CACHE_TIME" => $arParams["CACHE_TIME"],
+                "CACHE_GROUPS" => $arParams["CACHE_GROUPS"],
+                "SAVE_IN_SESSION" => "N",
+                "XML_EXPORT" => "Y",
+                'CONVERT_CURRENCY' =>'Y',
+                "CURRENCY_ID" => "RUB",
+                "SECTION_TITLE" => "NAME",
+                "SECTION_DESCRIPTION" => "DESCRIPTION",
+                'HIDE_NOT_AVAILABLE' => $arParams["HIDE_NOT_AVAILABLE"],
+                "TEMPLATE_THEME" => $arParams["TEMPLATE_THEME"]
+            ),
+            $component,
+            array('HIDE_ICONS' => 'Y')
+        );
+    }
 
 }
 
@@ -121,7 +127,7 @@ if ($arParams["USE_COMPARE"] == "Y") {}
 
 global $issections;
 
-$arSelect = Array("ID", "NAME", "PROPERTY_HAR_FRS_PROIZVODITEL.NAME", "PROPERTY_HAR_FRS_PROIZVODITEL.CODE", "PROPERTY_HAR_FRS_GOD_VYPUSKA");
+/*$arSelect = Array("ID", "NAME", "PROPERTY_HAR_FRS_PROIZVODITEL.NAME", "PROPERTY_HAR_FRS_PROIZVODITEL.CODE", "PROPERTY_HAR_FRS_GOD_VYPUSKA");
 
 $arFilter = array(
 	"IBLOCK_ID" => $arParams["IBLOCK_ID"],
@@ -146,15 +152,41 @@ while($ob = $res->GetNextElement())
 	if ($arFields["PROPERTY_HAR_FRS_GOD_VYPUSKA_VALUE"]) {
 		$sort["godvip"][$arFields["PROPERTY_HAR_FRS_GOD_VYPUSKA_VALUE"]] = $arFields["PROPERTY_HAR_FRS_GOD_VYPUSKA_VALUE"];
 	}
-}
+}*/
 
 if (!$issections) {
 	$intSectionID = 0;
+
 	if ($_REQUEST["view"] == "block") {
 		$tmp = "block";
 	} else {
 		$tmp = "";
 	}
+
+    if (isset($_REQUEST['orderBy'])) {
+        if ($_REQUEST['orderBy'] == 'asc') {
+            $orderBy = 'desc';
+        } else {
+            $orderBy = 'asc';
+        }
+    } else {
+        $orderBy = 'asc';
+    }
+
+    if (isset($_REQUEST['sortBy'])) {
+        $sortBy = $_REQUEST['sortBy'];
+        switch ($sortBy){
+            case 'price':$sortBy = 'CATALOG_PRICE_3';
+            break;
+            case 'date':$sortBy = 'created';
+            break;
+            default:$sortBy = $_REQUEST['sortBy'];
+        }
+
+    } else {
+        $sortBy = 'CATALOG_PRICE_3';
+    }
+
 
 
 
@@ -164,8 +196,8 @@ if (!$issections) {
 		array(
 			"IBLOCK_TYPE" => $arParams["IBLOCK_TYPE"],
 			"IBLOCK_ID" => $arParams["IBLOCK_ID"],
-			"ELEMENT_SORT_FIELD" => $arParams["ELEMENT_SORT_FIELD"],
-			"ELEMENT_SORT_ORDER" => $arParams["ELEMENT_SORT_ORDER"],
+			"ELEMENT_SORT_FIELD" => $sortBy,
+			"ELEMENT_SORT_ORDER" => $orderBy,
 			"ELEMENT_SORT_FIELD2" => $arParams["ELEMENT_SORT_FIELD2"],
 			"ELEMENT_SORT_ORDER2" => $arParams["ELEMENT_SORT_ORDER2"],
 			"PROPERTY_CODE" => $arParams["LIST_PROPERTY_CODE"],
@@ -243,7 +275,6 @@ if (!$issections) {
 
 			'TEMPLATE_THEME' => (isset($arParams['TEMPLATE_THEME']) ? $arParams['TEMPLATE_THEME'] : ''),
 			"ADD_SECTIONS_CHAIN" => "N",
-			"SORTS" => $sort
 		),
 		$component
 	);

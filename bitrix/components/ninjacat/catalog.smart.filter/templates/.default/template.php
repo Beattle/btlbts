@@ -17,16 +17,17 @@ $templateData = array(
 	'TEMPLATE_CLASS' => 'bx-'.$arParams['TEMPLATE_THEME']
 );
 
-if (isset($templateData['TEMPLATE_THEME']))
+/*if (isset($templateData['TEMPLATE_THEME']))
 {
 	$this->addExternalCss($templateData['TEMPLATE_THEME']);
-}
-$this->addExternalCss("/bitrix/css/main/bootstrap.css");
-$this->addExternalCss("/bitrix/css/main/font-awesome.css");
+}*/
+/*$this->addExternalCss("/bitrix/css/main/bootstrap.css");
+$this->addExternalCss("/bitrix/css/main/font-awesome.css");*/
 ?>
 <div class="bx-filter <?=$templateData["TEMPLATE_CLASS"]?> <?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL") echo "bx-filter-horizontal"?>">
 	<div class="bx-filter-section container-fluid">
-		<div class="row"><div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> bx-filter-title"><?echo GetMessage("CT_BCSF_FILTER_TITLE")?></div></div>
+<!--		<div class="row">
+            <div class="<?/*if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):*/?>col-sm-6 col-md-4<?/*else:*/?>col-lg-12<?/*endif*/?> bx-filter-title"><?/*echo GetMessage("CT_BCSF_FILTER_TITLE")*/?></div></div>-->
 		<form name="<?echo $arResult["FILTER_NAME"]."_form"?>" action="<?echo $arResult["FORM_ACTION"]?>" method="get" class="smartfilter">
 			<?foreach($arResult["HIDDEN"] as $arItem):?>
 			<input type="hidden" name="<?echo $arItem["CONTROL_NAME"]?>" id="<?echo $arItem["CONTROL_ID"]?>" value="<?echo $arItem["HTML_VALUE"]?>" />
@@ -48,7 +49,7 @@ $this->addExternalCss("/bitrix/css/main/font-awesome.css");
 						?>
 						<div class="<?if ($arParams["FILTER_VIEW_MODE"] == "HORIZONTAL"):?>col-sm-6 col-md-4<?else:?>col-lg-12<?endif?> bx-filter-parameters-box bx-active">
 							<span class="bx-filter-container-modef"></span>
-							<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"><span><?=$arItem["NAME"]?> <i data-role="prop_angle" class="fa fa-angle-<?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>up<?else:?>down<?endif?>"></i></span></div>
+							<div class="bx-filter-parameters-box-title" onclick="smartFilter.hideFilterProps(this)"><span><?=$arItem["NAME"]?>,<span class="rub"> руб.</span> <i data-role="prop_angle" class="fa fa-angle-<?if ($arItem["DISPLAY_EXPANDED"]== "Y"):?>up<?else:?>down<?endif?>"></i></span></div>
 							<div class="bx-filter-block" data-role="bx_filter_block">
 								<div class="row bx-filter-parameters-box-container">
 									<div class="col-xs-6 bx-filter-parameters-box-container-block bx-left">

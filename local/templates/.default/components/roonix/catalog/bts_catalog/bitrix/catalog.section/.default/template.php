@@ -11,56 +11,56 @@
 /** @var string $componentPath */
 /** @var CBitrixComponent $component */
 $this->setFrameMode(true);
-//echo "<pre>".print_r($arParams, 1)."</pre>";
-?>
-<div class="catalog_sorting clearfix">
-<form method="get" action="" id="srtform">
-	<div class="sort_by">
-		<div class="sort_title">Сортировать по:</div>
-		<select class="sort_select" name="sort" onchange="$('#srtform').submit();">
-			<option value="sort" <?=(!$_REQUEST["sort"]=="sort"?"selected":"")?>>Умолчанию</option>
-			<option value="name" <?=($_REQUEST["sort"]=="name"?"selected":"")?>>Названию</option>
-			<option value="shows" <?=($_REQUEST["sort"]=="shows"?"selected":"")?>>Популярности</option>
-		</select>
-	</div>
-	<? if  ($arParams["SORTS"]["proizv"]) { ?>
-	<div class="proizv_by">
-		<div class="show_title">Показывать по:</div>
-		<select class="show_select" name="proizv" onchange="$('#srtform').submit();">
-			<option value="">Производителю</option>
-			<?
-			foreach ($arParams["SORTS"]["proizv"] as $k => $v) { ?>
-				<option value="<?=$k?>" <?=($_REQUEST["proizv"]==$k?"selected":"")?>><?=$v?></option>
-			<? } ?>
-		</select>
-	</div>
-	<? } ?>
-	<? if  ($arParams["SORTS"]["godvip"]) { ?>
-	<div class="godvip_by">
-		<div class="show_title">Показывать по:</div>
-		<select class="show_select" name="godvip" onchange="$('#srtform').submit();">
-			<option value="">Году</option>
-			<?
-			foreach ($arParams["SORTS"]["godvip"] as $k => $v) { ?>
-				<option value="<?=$k?>" <?=($_REQUEST["godvip"]==$k?"selected":"")?>><?=$v?></option>
-			<? } ?>
-		</select>
-	</div>
-	<? } ?>
-</form>
-<? /*
-				<div class="change_view">
-					<div class="view_title">Вид:</div>
-					<a class="display_rows <?=(empty($_REQUEST["view"])?"active":"")?>" href="<?=$APPLICATION->GetCurPageParam("", array("view"))?>">&nbsp;</a>
-					<a class="display_blocks" href="<?=$APPLICATION->GetCurPageParam("view=block", array("view"))?>">&nbsp;</a>
-				</div>
-*/ ?>
-<?/*				<a class="catalog_compare" href="/compare/">сравнить товары (<?=count($_SESSION["CATALOG_COMPARE_LIST"][1]["ITEMS"])?>)</a>*/ ?>
-			</div>
-			<div class="catalog_items_rows clearfix">
 
-			<?
-foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
+
+
+$orderBy = $arParams['ELEMENT_SORT_ORDER'];
+
+if($orderBy === 'desc'){
+    $icon = '<span class="icon"><i class="fa fa-sort-desc" aria-hidden="true"></i></span> ';
+}else{
+    $icon = '<span class="icon"><i class="fa fa-sort-asc" aria-hidden="true"></i></span>';
+}
+
+$sortBy = $_REQUEST['sortBy']?$_REQUEST['sortBy']:'price';
+$this->addExternalCss("/bitrix/css/main/font-awesome.css");
+
+
+
+ if($arResult['ITEMS']):?>
+    <div class="sort-section">
+        Сортировать по:
+        <a rel="nofollow" <? if ($sortBy == 'date') : ?> class="current-sort" <? endif; ?>
+           href="<?= $APPLICATION->GetCurPageParam('sortBy=date&orderBy='.$orderBy, array('sortBy', 'orderBy')) ?>"
+        >
+            <span class="sort">дате размещения</span>
+        </a>
+        <? if ($sortBy == 'date') :?><?=$icon?><?endif;?>
+        <a rel="nofollow" <? if ($sortBy == 'name') : ?> class="current-sort" <? endif; ?>
+           href="<?= $APPLICATION->GetCurPageParam('sortBy=name&orderBy='.$orderBy, array('sortBy', 'orderBy')) ?>"
+        >
+            <span class="sort">названию</span>
+        </a>
+        <? if ($sortBy == 'name') :?><?=$icon?><?endif;?>
+        <a rel="nofollow" <? if ($sortBy == 'price') : ?> class="current-sort" <? endif; ?>
+           href="<?= $APPLICATION->GetCurPageParam('sortBy=price&orderBy='.$orderBy, array('sortBy', 'orderBy')) ?>"
+        >
+            <span class="sort">цене</span>
+        </a>
+        <? if ($sortBy == 'price') :?><?=$icon?><?endif;?>
+        <a rel="nofollow" <? if ($sortBy == 'PROPERTY_561') : ?> class="current-sort" <? endif; ?>
+           href="<?= $APPLICATION->GetCurPageParam('sortBy=PROPERTY_561&orderBy='.$orderBy, array('sortBy', 'orderBy')) ?>"
+        >
+            <span class="sort">году выпуска</span>
+        </a>
+        <? if ($sortBy == 'PROPERTY_561') :?><?=$icon?><?endif;?>
+
+
+    </div>
+<? endif;?>
+<div class="catalog_items_rows clearfix">
+
+<? foreach ($arResult['ITEMS'] as $key => $arItem) { ?>
 	<div class="bl_product3">
 					<? if ($arItem["PROPERTIES"]["special_offer"]["VALUE"]) { ?>
 						<div class="rasprodazha"></div>

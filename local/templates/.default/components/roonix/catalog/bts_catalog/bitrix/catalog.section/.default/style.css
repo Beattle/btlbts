@@ -4,6 +4,34 @@
 .catalog_item a.heading{margin-left: 164px;}
 */
 
+.sort-section .current-sort{
+	background:rgb(82, 147, 211);
+	color:#fff;
+}
+
+.sort-section .icon{
+	font-size: 16px;
+	margin-left: 3px;
+}
+
+.sort-section .icon .fa.fa-sort-asc{
+	vertical-align: -5px;
+}
+.sort-section{
+	margin-top: 10px;
+}
+
+.sort-section a:first-child{
+	margin-left: 7px;
+}
+
+.sort-section a{
+	padding: 4px 10px;
+	margin-left: 13px;
+	background: #f5f4f4;
+	color:#000;
+}
+
 .frs_price {border: 1px solid #ccc; padding: 10px; margin: 10px 30px 5px 30px; border-radius: 3px; background-color: #ededed; font-size: 18px; font-weight: bold; color: rgb(82, 147, 211);}
 
 .catalog_sorting {

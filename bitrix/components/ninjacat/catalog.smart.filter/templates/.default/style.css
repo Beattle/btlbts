@@ -1,9 +1,13 @@
 .bx-filter {
-	width: 100%;
+	width: 250px;
 	min-width: 220px;
 	font-family: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	margin-bottom: 20px;
+	position: absolute;
+	right: 0;
 }
+
+
 .bx-filter .bx-filter-section {
 	/*background: #edf6fc; /* color */
 	position: relative;
@@ -37,9 +41,10 @@
 	}
 }
 .bx-filter .bx-filter-parameters-box-title span {
-	color: #039be5;
+	color: rgb(82, 147, 211);
 	border-bottom: 1px solid transparent;
 	cursor: pointer;
+	font-weight: bold;
 }
 .bx-filter .bx-filter-parameters-box-title span:hover {
 	border-color: #039be5;
@@ -69,9 +74,12 @@
 .bx-filter .bx-filter-parameters-box.bx-active .bx-filter-block i.bx-ft-sub {
 	font-size: 14px;
 	font-style: normal;
-	display: block;
 	padding-bottom: 5px;
+	color: rgb(82, 147, 211);
+	font-weight: bold;
 }
+
+
 .bx-filter-parameters-box-container {
 	padding-bottom: 20px;
 }
@@ -81,18 +89,21 @@
 .bx-filter .bx-filter-parameters-box-container-block {
 	font-size: 11px;
 	color: #3f3f3f;
+	display: inline-block;
 }
 /*
 * INPUTS
 *
 */
 
-.bx-filter .bx-filter-input-container {}
+.bx-filter .bx-filter-input-container {
+	display: inline-block;
+}
 .bx-filter .bx-filter-input-container input {
-	display: block;
-	width: 100%;
-	font-size: 18px;
-	height: 38px;
+	display: inline-block;
+	width: 93px;
+	font-size: 14px;
+	height: 27px;
 	margin: 0;
 	padding: 0 4px;
 	border: 1px solid #ccd5db;
@@ -138,10 +149,12 @@ COLOR
 .bx-filter .bx-ui-slider-track-container {
 	padding-top: 35px;
 	padding-bottom: 25px;
+	width: 88%;
 }
 .bx-filter .bx-ui-slider-track {
 	position: relative;
 	height: 7px;
+	background: rgb(82, 147, 211);
 	/*background: #d8e9f0;/* COLOR */
 }
 .bx-filter .bx-ui-slider-part {
@@ -233,14 +246,13 @@ COLOR
 .bx-filter .bx-ui-slider-handle.left {
 	left: 0;
 	margin-left: -21px;
-	/* COLOR */
-	/*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAArUlEQVQ4y6WSQQ6FMAhEXbjyXwzOpBdx5bXKbYRWLFSJ2m8ysVHfzGA7DH9cuKVfNwwM40ZzZzJlmE3WTjjNfF9Fn2EwMH5pUGYWOJ3w6wZ4wDKz6rUBumQPPxrUmT0IxuxpqxYLQ7MOG5TaHtbk1iza5+VauW5dfdcYSDKcMLkP7wxdA5sMQWV/BkwDTY7mtAfHjpJ/Ihj4DoIgXZ9J+siaimi6rimLgSw87qod+1BRTwMJRYoAAAAASUVORK5CIIA=) no-repeat right top;*/
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAArUlEQVQ4y6WSQQ6FMAhEXbjyXwzOpBdx5bXKbYRWLFSJ2m8ysVHfzGA7DH9cuKVfNwwM40ZzZzJlmE3WTjjNfF9Fn2EwMH5pUGYWOJ3w6wZ4wDKz6rUBumQPPxrUmT0IxuxpqxYLQ7MOG5TaHtbk1iza5+VauW5dfdcYSDKcMLkP7wxdA5sMQWV/BkwDTY7mtAfHjpJ/Ihj4DoIgXZ9J+siaimi6rimLgSw87qod+1BRTwMJRYoAAAAASUVORK5CIIA=) no-repeat right top;
 }
 .bx-filter .bx-ui-slider-handle.right {
 	right: 0;
 	margin-right: -21px;
 	/* COLOR */
-	/*background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAAq0lEQVQ4y6WSQRKDIAxFXXSlF0vOZC+SlddKblMUUhKCraIzX9Ahj58PE268TE8e3GSFJ5BUTDskaRl1QFk8BsHs4BCMQMruVEe+l4kWglFu5yLEZKDFXyeXIFoEpg3z738mJTzXhncj75+QtqjnJENO2sG4I1VXDtR3ogv7O1dHxV10gi75EGILiE78RRKy33AOq07i+Us4kRamkOPGptesQjeXIjZjO+fXB+hjUU/S3Z+WAAAAAElFTkSuQmCC) no-repeat left top;*/
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAYAAADUryzEAAAAq0lEQVQ4y6WSQRKDIAxFXXSlF0vOZC+SlddKblMUUhKCraIzX9Ahj58PE268TE8e3GSFJ5BUTDskaRl1QFk8BsHs4BCMQMruVEe+l4kWglFu5yLEZKDFXyeXIFoEpg3z738mJTzXhncj75+QtqjnJENO2sG4I1VXDtR3ogv7O1dHxV10gi75EGILiE78RRKy33AOq07i+Us4kRamkOPGptesQjeXIjZjO+fXB+hjUU/S3Z+WAAAAAElFTkSuQmCC) no-repeat left top;
 }
 
 /*
@@ -427,12 +439,16 @@ COLOR
 *
 */
 
-.bx-filter .bx-filter-input-checkbox {}
+.bx-filter .bx-filter-input-checkbox {
+	vertical-align: middle;
+}
 .bx-filter .bx-filter-input-checkbox input[type=radio],
-.bx-filter .bx-filter-input-checkbox input[type=checkbox] {}
+.bx-filter .bx-filter-input-checkbox input[type=checkbox] {
+	vertical-align: -2px;
+}
 .bx-filter .bx-filter-input-checkbox .bx-filter-param-text {
-	display: block;
 	text-align: left;
+	font-size: 14px;
 }
 /*
 * 	BTN 
@@ -647,8 +663,19 @@ COLOR
 .btn-themes {
 	/*background-color: #1485CE;/* COLOR */
 	/*border-color: #1485CE;/* COLOR */
-	color: #FFF
+	color: #FFF;
+	background: url("/images/silk_bg.jpg") repeat-x;
+	height: 24px;
+	width: 120px;
+	border:none;
+	cursor: pointer;
 }
+.btn.btn-link{
+	height: 24px;
+	width: 120px;
+	cursor: pointer;
+}
+
 .btn-themes.bx-active,
 .btn-themes.focus,
 .btn-themes:active,
@@ -699,7 +726,7 @@ COLOR
 	left: 97%;
 }
 .bx-filter .bx-filter-popup-result.left {
-	right:97%;
+	right:108%;
 }
 .bx-filter-horizontal .bx-filter-popup-result{
 	display: inline-block;

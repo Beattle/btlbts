@@ -24,7 +24,8 @@ CModule::AddAutoloadClasses(null,
         'Bitrix\\VetalKms\\validators\\CFormCustomValidatorStringRegExp' => '/local/bitrix/vetalkms/validators/string_regexp.php',
         'Bitrix\\VetalKms\\forms\\CFormHelper' => '/local/bitrix/vetalkms/forms/formhelper.php',
         //Ninjacat
-        '\ninjacat\FacetMod' => '/local/php_interface/include/classes/facetmod.php'
+        '\ninjacat\FacetMod' => '/local/php_interface/include/classes/facetmod.php',
+        '\ninjacat\Tools' => '/local/php_interface/include/classes/tools.php'
         )
 );
 
