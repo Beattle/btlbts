@@ -39,9 +39,9 @@ $this->setFrameMode(true);
                 <a><img src="<?= $img["src"] ?>" width="650" alt="<?= $arResult["NAME"] ?>"></a>
                 <?
             }
-            if($arResult["DISPLAY_PROPERTIES"]["HAR_FRS_PRICE"]["DISPLAY_VALUE"]) {
+            if($arResult["MIN_PRICE"]['VALUE']) {
             ?>
-                <div class="priceunderpic"><?=$arResult["DISPLAY_PROPERTIES"]["HAR_FRS_PRICE"]["DISPLAY_VALUE"];?></div>
+                <div class="priceunderpic"><?=$arResult["MIN_PRICE"]["PRINT_VALUE"];?></div>
             <? } ?>
         </div>
         <div class="mn_price">
